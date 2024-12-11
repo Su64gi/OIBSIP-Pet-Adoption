@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Tails Pet Adoption</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Happy Tails</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#pets">Pets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+<!-- Banner Section with Image Slider -->
+<section class="banner">
+  <div class="slider">
+    <img class="slide" src="dog.jpg" alt="Dog">
+    <img class="slide" src="cat.jpg" alt="Cat">
+    <img class="slide" src="bird.jpg" alt="Bird">
+  </div>
+  <div class="banner-text">
+    <h1>Welcome to Happy Tails Pet Adoption</h1>
+    <p>Find your new best friend today!</p>
+    <a href="#adopt-now" class="cta-button">Adopt Now</a>
+  </div>
+  
+</section>
+
+ <!-- About Section -->
+<section class="about" id="about">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="dog.jpg" alt="About Us" />
+    </div>
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        At Happy Tails, our mission is simple: to connect loving families with pets who deserve a second chance at life. 
+
+Founded on the principles of compassion and care, Happy Tails has been tirelessly working to rescue, rehabilitate, and rehome cats and dogs of all breeds and backgrounds. Whether it’s a playful puppy, a gentle senior cat, or a spirited stray, we see the potential in every animal and work to ensure they find their perfect match.
+      </p>
+      <p>
+        Browse our list of adorable pets and start your journey to a lifetime of happiness.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Filter Section -->
+  <section class="filter">
+    <h2>Find Your Pet</h2>
+    <button onclick="filterPets('all')">All</button>
+    <button onclick="filterPets('dog')">Dogs</button>
+    <button onclick="filterPets('cat')">Cats</button>
+    <button onclick="filterPets('birds')">Birds</button>
+  </section>
+
+  <!-- Pets Section -->
+  <section class="pets" id="pets">
+    <div class="pet-card" data-type="dog">
+      <img src="golden-retreiver.jpg" alt="Dog" />
+      <h3>Buddy</h3>
+      <p>Breed: Golden Retriever</p>
+      <button onclick="openForm('Buddy')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="cat">
+      <img src="persian-cat.jpg" alt="Cat" />
+      <h3>Luna</h3>
+      <p>Breed: Persian</p>
+      <button onclick="openForm('Luna')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="dog">
+      <img src="labrador.jpg" alt="Dog" />
+      <h3>Max</h3>
+      <p>Breed: Labrador</p>
+      <button onclick="openForm('Max')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="birds">
+      <img src="amazon-parrot.jpg" alt="Dog" />
+      <h3>Rio</h3>
+      <p>Breed: Amazon Parrot</p>
+      <button onclick="openForm('Rio')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="cat">
+      <img src="bengal-cat.jpg" alt="Dog" />
+      <h3>Simba</h3>
+      <p>Breed: Bengal</p>
+      <button onclick="openForm('Simba')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="birds">
+      <img src="love-birds.jpg" alt="Dog" />
+      <h3>Skye</h3>
+      <p>Breed:Love Birds </p>
+      <button onclick="openForm('Skye')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="cat">
+      <img src="ragdoll-cat.jpg" alt="Dog" />
+      <h3>Bella</h3>
+      <p>Breed: Ragdoll</p>
+      <button onclick="openForm('Bella')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="birds">
+      <img src="macaw.jpg" alt="Dog" />
+      <h3>Coco</h3>
+      <p>Breed: Macow</p>
+      <button onclick="openForm('Coco')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="dog">
+      <img src="pull-dog.jpg" alt="Dog" />
+      <h3>Molly</h3>
+      <p>Breed:Bulldog</p>
+      <button onclick="openForm('Molly')">Adopt Me</button>
+    </div>
+    <div class="pet-card" data-type="birds">
+      <img src="finch.jpg" alt="Dog" />
+      <h3>Piper</h3>
+      <p>Breed: Finch</p>
+      <button onclick="openForm('Piper')">Adopt Me</button>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="footer" id="contact">
+  <div class="footer-content">
+    <p>Contact Us:</p>
+    <p>Email: <a href="mailto:contact@happytails.com">contact@happytails.com</a></p>
+    <p>Phone: <a href="tel:+1800123456">+1 800 123 456</a></p>
+    <p>© 2024 Happy Tails Pet Adoption. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <!-- Adoption Form Modal -->
+  <div class="modal" id="adoptionForm">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Adopt <span id="petName"></span></h2>
+      <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" required>
+        <label for="message">Why do you want to adopt?</label>
+        <textarea id="message" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+  let slideIndex = 0;
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+    
+      // Hide all images initially by setting opacity to 0
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
+    
+      slideIndex++;  // Move to the next image
+      if (slideIndex > slides.length) {
+        slideIndex = 1;  // Reset to first image after last
+      }
+    
+      // Show the current image by setting opacity to 1
+      slides[slideIndex - 1].style.opacity = 1;
+    
+      // Change image every 3 seconds (3000ms)
+      setTimeout(showSlides, 3000);
+    }
+    
+    // Call the showSlides function to start the image slider
+    showSlides();
+    </script>
+</body>
+</html>
